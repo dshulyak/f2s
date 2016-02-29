@@ -1,0 +1,6 @@
+id: upload_cirros
+version: '8.0'
+handler: shell
+actions:
+  run: ruby /etc/puppet/modules/osnailyfacter/modular/astute/upload_cirros.rb
+  update: ruby /etc/puppet/modules/osnailyfacter/modular/astute/upload_cirros.rb

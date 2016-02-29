@@ -1,0 +1,8 @@
+id: generate_haproxy_keys
+version: '8.0'
+handler: shell
+actions:
+  run: sh /etc/puppet/modules/osnailyfacter/modular/astute/generate_haproxy_keys.sh
+    -i {CLUSTER_ID} -h {CN_HOSTNAME} -o 'haproxy' -p /var/lib/fuel/keys/
+  update: sh /etc/puppet/modules/osnailyfacter/modular/astute/generate_haproxy_keys.sh
+    -i {CLUSTER_ID} -h {CN_HOSTNAME} -o 'haproxy' -p /var/lib/fuel/keys/

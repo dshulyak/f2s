@@ -28,7 +28,7 @@ INPUTS_LOCATION = "/root/current/"
 DEPLOYMENT_GROUP_PATH = os.path.join(LIBRARY_PATH,
     'deployment', 'puppet', 'deployment_groups', 'tasks.yaml')
 
-VALID_TASKS = ('puppet', 'skipped')
+VALID_TASKS = ('puppet', 'skipped', 'shell', 'stage')
 
 
 def clean_resources():
@@ -133,8 +133,18 @@ class Task(object):
                         'run': man_path,
                         'update': man_path}),
                     ('input', {}),])
-        else:
-            raise NotImplemented('Support for %s' % self.data['type'])
+        elif self.data['type'] == 'stage':
+            data = OrderedDict([
+                ('id', self.name),
+                ('handler', 'none'),
+                ('version', '8.0')])
+        elif self.data['type'] == 'shell':
+            cmd = self.data['parameters']['cmd']
+            data = OrderedDict([
+                ('id', self.name),
+                ('version', '8.0'),
+                ('handler', 'shell'),
+                ('actions', {'run': cmd, 'update': cmd})])
         return ordered_dump(data, default_flow_style=False)
 
     @property

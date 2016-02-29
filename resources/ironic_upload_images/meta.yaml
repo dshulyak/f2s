@@ -1,0 +1,6 @@
+id: ironic_upload_images
+version: '8.0'
+handler: shell
+actions:
+  run: ruby /etc/puppet/modules/osnailyfacter/modular/ironic/upload_images.rb {CLUSTER_ID}
+  update: ruby /etc/puppet/modules/osnailyfacter/modular/ironic/upload_images.rb {CLUSTER_ID}

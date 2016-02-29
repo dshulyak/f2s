@@ -1,0 +1,8 @@
+id: vcenter_compute_zones_create
+version: '8.0'
+handler: shell
+actions:
+  run: /usr/bin/python /etc/puppet/modules/osnailyfacter/modular/astute/vcenter_hooks.py
+    --create_zones
+  update: /usr/bin/python /etc/puppet/modules/osnailyfacter/modular/astute/vcenter_hooks.py
+    --create_zones

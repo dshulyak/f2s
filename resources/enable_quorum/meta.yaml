@@ -1,0 +1,6 @@
+id: enable_quorum
+version: '8.0'
+handler: shell
+actions:
+  run: ruby /etc/puppet/modules/osnailyfacter/modular/astute/enable_quorum.rb
+  update: ruby /etc/puppet/modules/osnailyfacter/modular/astute/enable_quorum.rb

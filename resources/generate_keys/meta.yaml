@@ -1,0 +1,9 @@
+id: generate_keys
+version: '8.0'
+handler: shell
+actions:
+  run: sh /etc/puppet/modules/osnailyfacter/modular/astute/generate_keys.sh -p /var/lib/fuel/keys/
+    -i {CLUSTER_ID} -o 'mongodb' -s 'neutron nova mysql' -f '0 1'
+  update: sh /etc/puppet/modules/osnailyfacter/modular/astute/generate_keys.sh -p
+    /var/lib/fuel/keys/ -i {CLUSTER_ID} -o 'mongodb' -s 'neutron nova mysql' -f '0
+    1'

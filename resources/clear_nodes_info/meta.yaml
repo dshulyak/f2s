@@ -1,0 +1,6 @@
+id: clear_nodes_info
+version: '8.0'
+handler: shell
+actions:
+  run: rm -f /etc/hiera/nodes.yaml
+  update: rm -f /etc/hiera/nodes.yaml

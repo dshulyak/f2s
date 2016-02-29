@@ -1,0 +1,8 @@
+id: generate_keys_ceph
+version: '8.0'
+handler: shell
+actions:
+  run: sh /etc/puppet/modules/osnailyfacter/modular/astute/generate_keys.sh -i {CLUSTER_ID}
+    -s 'ceph' -p /var/lib/fuel/keys/
+  update: sh /etc/puppet/modules/osnailyfacter/modular/astute/generate_keys.sh -i
+    {CLUSTER_ID} -s 'ceph' -p /var/lib/fuel/keys/
